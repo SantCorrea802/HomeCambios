@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Estilo adicional -->
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="mb-0">Money Exchange</h1>
+            <button id="cerrarSesion" class="btn btn-danger">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <main class="container text-center my-5">
+        <section class="mb-5">
+            <h2>Tus Créditos</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-2">
+                    <div class="credito-box">
+                        <h3>MXN</h3>
+                        <p id="creditoMXN">0</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="credito-box">
+                        <h3>COP</h3>
+                        <p id="creditoCOP">0</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="credito-box">
+                        <h3>USD</h3>
+                        <p id="creditoUSD">0</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="credito-box">
+                        <h3>EUR</h3>
+                        <p id="creditoEUR">0</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="credito-box">
+                        <h3>JPY</h3>
+                        <p id="creditoJPY">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>¿Qué quieres hacer?</h2>
+            <div class="btn-group mt-4">
+                <button id="cambiarDinero" class="btn btn-primary">Cambiar Dinero</button>
+                <button id="ingresarDinero" class="btn btn-success">Ingresar Dinero</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Money Exchange</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script_cambio.js"></script> <!-- Archivo JavaScript principal -->
+</body>
+</html>
