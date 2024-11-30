@@ -56,18 +56,7 @@ public class ControlUsuarios {
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     System.out.println("Usuario encontrado en la base de datos.");
-                    usuario = new Usuario(
-                        null,  // no devolver la contraseña
-                        rs.getString("correo"),
-                        rs.getInt("rol"),
-                        rs.getDouble("credito_mxn"),
-                        rs.getDouble("credito_usd"),
-                        rs.getDouble("credito_cop"),
-                        rs.getDouble("credito_eur"),
-                        rs.getDouble("credito_jpy"),
-                        rs.getString("nombre"),
-                        rs.getInt("edad"),
-                        rs.getInt("id")
+                    usuario = new Usuario(null,rs.getString("correo"),rs.getInt("rol"),rs.getDouble("credito_mxn"),rs.getDouble("credito_usd"),rs.getDouble("credito_cop"),rs.getDouble("credito_eur"),rs.getDouble("credito_jpy"),rs.getString("nombre"),rs.getInt("edad"),rs.getInt("id")
                     );
                 } else {
                     System.out.println("No se encontró ningún usuario con las credenciales proporcionadas.");
@@ -172,18 +161,7 @@ public class ControlUsuarios {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                return new Usuario(
-                    resultSet.getString("pass"),
-                    resultSet.getString("correo"),
-                    resultSet.getInt("rol"),
-                    resultSet.getDouble("credito_mxn"),
-                    resultSet.getDouble("credito_usd"),
-                    resultSet.getDouble("credito_cop"),
-                    resultSet.getDouble("credito_eur"),
-                    resultSet.getDouble("credito_jpy"),
-                    resultSet.getString("nombre"),
-                    resultSet.getInt("edad"),
-                    resultSet.getInt("id")
+                return new Usuario(resultSet.getString("pass"),resultSet.getString("correo"),resultSet.getInt("rol"),resultSet.getDouble("credito_mxn"),resultSet.getDouble("credito_usd"),resultSet.getDouble("credito_cop"),resultSet.getDouble("credito_eur"),resultSet.getDouble("credito_jpy"),resultSet.getString("nombre"),resultSet.getInt("edad"),resultSet.getInt("id")
                 );
             }
         } catch (Exception e) {
@@ -196,8 +174,7 @@ public class ControlUsuarios {
     public static boolean registrarUsuario(Usuario usuario) {
         String query = "INSERT INTO usuarios (id, nombre, edad, correo, pass, rol, credito_mxn, credito_usd, credito_cop, credito_eur, credito_jpy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = Conexion.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-
+            PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, usuario.getId());
             statement.setString(2, usuario.getNombre());
             statement.setInt(3, usuario.getEdad());

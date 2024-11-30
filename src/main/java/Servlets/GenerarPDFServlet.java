@@ -61,7 +61,6 @@ public class GenerarPDFServlet extends HttpServlet {
             Document document = new Document();
             PdfWriter.getInstance(document, response.getOutputStream());
             document.open();
-
             document.add(new Paragraph("Información del Usuario"));
             document.add(new Paragraph("ID: " + usuario.getId()));
             document.add(new Paragraph("Nombre: " + usuario.getNombre()));
